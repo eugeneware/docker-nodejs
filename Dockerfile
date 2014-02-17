@@ -2,13 +2,21 @@
 FROM ubuntu
 MAINTAINER Eugene Ware <eugene@noblesamurai.com>
 
-# Install Node.js
 RUN apt-get update
+
+# To get add-apt-repository
 RUN apt-get install -y python-software-properties
+
+# Install Node.js
 RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get update
 RUN apt-get install -y nodejs
+
+# For building native modules
 RUN apt-get install -y build-essential openssl libssl-dev pkg-config
+
+# For phantomjs binaries
+RUN apt-get install -y libfreetype6 libfontconfig
 
 # Append to $PATH variable.
 RUN echo '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bash_profile
