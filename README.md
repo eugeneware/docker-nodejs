@@ -14,6 +14,6 @@ $ docker run -rm eugeneware/nodejs node --version
 ### Building from scratch
 
 ``` bash
-$ docker built -t eugeneware/nodejs .
+$ docker build -t eugeneware/nodejs .
 $ docker run -rm eugeneware/nodejs node --version
 ```
