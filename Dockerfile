@@ -18,6 +18,9 @@ RUN apt-get install -y build-essential openssl libssl-dev pkg-config
 # For phantomjs binaries
 RUN apt-get install -y libfreetype6 libfontconfig
 
+# Add some helper command line things
+RUN npm install -g yo serve generator-nodejs
+
 # Append to $PATH variable.
 RUN echo '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bash_profile
 
